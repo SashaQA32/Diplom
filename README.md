@@ -35,14 +35,14 @@
 
 ## Инструкция по запуску
 
-**1.** Открыть проект fmh-android в Android Studio.
-**2.** Запустить эмулятор (API 29) или подключить устройство для тестирования.
-**3.** Во вкладке Project левым кликом мыши выделить каталог app.
-**4.** Запустить тесты сочетанием клавиш Shift+Ctrl+F10 (Windows). Если не получается, тогда нажать кнопку Run 'All Tests'.    
+1. Открыть проект fmh-android в Android Studio.
+2. Запустить эмулятор (API 29) или подключить устройство для тестирования.
+3. Во вкладке Project левым кликом мыши выделить каталог app.
+4. Запустить тесты сочетанием клавиш Shift+Ctrl+F10 (Windows). Если не получается, тогда нажать кнопку Run 'All Tests'.    
 
 
 ## Отчетная документация
 * [План по ручному и автоматизированному тестированию](https://github.com/SashaQA32/Diplom/blob/master/Plan.md)
 * [Чек-лист проверок](https://github.com/SashaQA32/Diplom/blob/master/Check.xlsx)
 * [Тест-кейсы](https://github.com/SashaQA32/Diplom/blob/master/Cases.xlsx)
-* [Отчет по итогам тестирования]()
+* [Отчет по итогам тестирования](https://github.com/SashaQA32/Diplom/blob/master/Result.md)
