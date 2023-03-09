@@ -8,9 +8,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import static org.hamcrest.Matchers.allOf;
-import static ru.netology.qa.elemets.AboutScreen.getAboutElementsButtonAbout;
-import static ru.netology.qa.elemets.AboutScreen.getAboutElementsButtonPrivacyPolicy;
-import static ru.netology.qa.elemets.AboutScreen.getAboutElementsButtonTermsOfUse;
+import static ru.netology.qa.elements.AboutScreen.getAboutElementsButtonAbout;
+import static ru.netology.qa.elements.AboutScreen.getAboutElementsButtonPrivacyPolicy;
+import static ru.netology.qa.elements.AboutScreen.getAboutElementsButtonTermsOfUse;
 
 import io.qameta.allure.kotlin.Allure;
 
@@ -32,5 +32,16 @@ public class AboutSteps {
         Allure.step("Нажать на ссылку Пользовательское соглашение");
         onView(getAboutElementsButtonTermsOfUse())
                 .check(matches(allOf(withText("https://vhospice.org/#/terms-of-use"), isDisplayed(), isClickable())));
+    }
+
+    public static void waitFor(int seconds) {
+        seconds = seconds < 0 ? 0 : seconds;
+        while (--seconds >= 0) {
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

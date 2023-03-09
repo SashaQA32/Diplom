@@ -8,17 +8,16 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonCategoryFilter;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonDateEnd;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonDateStart;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonExpandNews;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonFilterNews;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonNews;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonOkDateStart;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonOkWrongMessage;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsButtonSorting;
-import static ru.netology.qa.elemets.NewsScreen.getNewsElementsTitleFilterNews;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonCategoryFilter;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonDateEnd;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonDateStart;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonExpandNews;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonFilterNews;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonNews;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonOkDateStart;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonOkWrongMessage;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonSorting;
+import static ru.netology.qa.elements.NewsScreen.getNewsElementsTitleFilterNews;
 
 import android.view.View;
 

@@ -7,10 +7,10 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
-import static ru.netology.qa.elemets.QuotesScreen.getQuotesElementsButtonExpandThematicQuote;
-import static ru.netology.qa.elemets.QuotesScreen.getQuotesElementsButtonThematicQuote;
-import static ru.netology.qa.elemets.QuotesScreen.getQuotesElementsDescriptionThematicQuote;
-import static ru.netology.qa.elemets.QuotesScreen.getQuotesElementsTitleThematicQuote;
+import static ru.netology.qa.elements.QuotesScreen.getQuotesElementsButtonExpandThematicQuote;
+import static ru.netology.qa.elements.QuotesScreen.getQuotesElementsButtonThematicQuote;
+import static ru.netology.qa.elements.QuotesScreen.getQuotesElementsDescriptionThematicQuote;
+import static ru.netology.qa.elements.QuotesScreen.getQuotesElementsTitleThematicQuote;
 
 import io.qameta.allure.kotlin.Allure;
 

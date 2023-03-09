@@ -1,4 +1,4 @@
-package ru.netology.qa.elemets;
+package ru.netology.qa.elements;
 
 import static androidx.test.espresso.matcher.ViewMatchers.withHint;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;

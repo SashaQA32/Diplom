@@ -6,12 +6,14 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
-import static ru.netology.qa.elemets.AuthorizationScreen.getAuthorizationElementsButtonLogOut;
-import static ru.netology.qa.elemets.AuthorizationScreen.getAuthorizationElementsLoginField;
-import static ru.netology.qa.elemets.AuthorizationScreen.getAuthorizationElementsPasswordField;
-import static ru.netology.qa.elemets.AuthorizationScreen.getAuthorizationElementsTextAuthorization;
+import static org.hamcrest.Matchers.allOf;
+import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsButtonLogOut;
+import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsLoginField;
+import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsPasswordField;
+import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsTextAuthorization;
 
 import io.qameta.allure.kotlin.Allure;
 
@@ -60,30 +62,35 @@ public class AuthorizationSteps {
         Allure.step("Поле Логин оставить пустым");
         onView(getAuthorizationElementsLoginField())
                 .perform(replaceText(" "), closeSoftKeyboard());
+        onView(allOf(withContentDescription("Login and password cannot be empty"), isDisplayed()));
     }
 
     public static void clickLoginFieldUnregisteredUser() {
         Allure.step("Ввести в поле Логин данные незарегистрированного пользователя");
         onView(getAuthorizationElementsLoginField())
                 .perform(replaceText("login123"), closeSoftKeyboard());
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickLoginFieldWithSpecialCharacters() {
         Allure.step("Ввести в поле Логин спецсимволы");
         onView(getAuthorizationElementsLoginField())
                 .perform(replaceText("@#$^&**"), closeSoftKeyboard());
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickLoginFieldOneLetter() {
         Allure.step("Ввести в поле Логин один символ");
         onView(getAuthorizationElementsLoginField())
                 .perform(replaceText("l"), closeSoftKeyboard());
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickLoginFieldLettersOfDifferentCase() {
         Allure.step("Ввести в поле Логин буквы разного регистра");
         onView(getAuthorizationElementsLoginField())
                 .perform(replaceText("LoGin2"), closeSoftKeyboard());
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickPasswordFieldIsEmpty(){
@@ -91,6 +98,7 @@ public class AuthorizationSteps {
         onView(getAuthorizationElementsPasswordField())
                 .perform(replaceText(" "), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickPasswordFieldUnregisteredUser(){
@@ -98,6 +106,7 @@ public class AuthorizationSteps {
         onView(getAuthorizationElementsPasswordField())
                 .perform(replaceText("password123"), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickPasswordFieldWithSpecialCharacters(){
@@ -105,6 +114,7 @@ public class AuthorizationSteps {
         onView(getAuthorizationElementsPasswordField())
                 .perform(replaceText("$%&(*^$"), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickPasswordFieldOneLetter(){
@@ -112,6 +122,7 @@ public class AuthorizationSteps {
         onView(getAuthorizationElementsPasswordField())
                 .perform(replaceText("p"), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 
     public static void clickPasswordFieldLettersOfDifferentCase(){
@@ -119,5 +130,6 @@ public class AuthorizationSteps {
         onView(getAuthorizationElementsPasswordField())
                 .perform(replaceText("PassWord2"), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
+        onView(allOf(withContentDescription("Wrong login or password"), isDisplayed()));
     }
 }
