@@ -17,7 +17,6 @@ import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.netology.qa.elements.AuthorizationScreen;
 import ru.netology.qa.elements.ClaimsScreen;
-import ru.netology.qa.steps.AboutSteps;
 import ru.netology.qa.steps.AuthorizationSteps;
 import ru.netology.qa.steps.ClaimsSteps;
 
@@ -47,15 +46,12 @@ public class ClaimsTest {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordField();
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
     }
 
     @AfterClass
     public static void Exit() {
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
-        AboutSteps.waitFor(2);
         AuthorizationSteps.clickButtonLogOut();
     }
 
@@ -69,7 +65,6 @@ public class ClaimsTest {
     public void applicationFilteringInProgress() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxOpen();
         ClaimsSteps.clickButtonOk();
@@ -82,7 +77,6 @@ public class ClaimsTest {
     public void applicationFilteringOpen() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
         ClaimsSteps.clickButtonOk();
@@ -95,7 +89,6 @@ public class ClaimsTest {
     public void applicationFilteringExecuted() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxOpen();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
@@ -110,7 +103,6 @@ public class ClaimsTest {
     public void applicationFilteringCancelled() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxOpen();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
@@ -125,13 +117,11 @@ public class ClaimsTest {
     public void addNewClaim() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickCheckBoxExecutorField();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -145,12 +135,10 @@ public class ClaimsTest {
     public void titleFieldIsEmpty() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickCheckBoxExecutorField();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -167,13 +155,11 @@ public class ClaimsTest {
     public void titleFieldOneCharacter() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleFieldOneCharacter();
         ClaimsSteps.clickCheckBoxExecutorField();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -187,13 +173,11 @@ public class ClaimsTest {
     public void titleFieldMaximumCharacters() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleFieldMaximumCharacters();
         ClaimsSteps.clickCheckBoxExecutorField();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -207,16 +191,13 @@ public class ClaimsTest {
     public void executorFieldIsEmpty() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonSave();
     }
 
@@ -227,13 +208,11 @@ public class ClaimsTest {
     public void executorFieldOtherData() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickExecutorFieldOtherData();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -247,13 +226,11 @@ public class ClaimsTest {
     public void ExecutorFieldConsistsLettersAndNumbers() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickExecutorFieldConsistsLettersAndNumbers();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -267,13 +244,11 @@ public class ClaimsTest {
     public void ExecutorFieldSpecialCharacters() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickExecutorFieldSpecialCharacters();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -286,14 +261,11 @@ public class ClaimsTest {
     @Description("Поле Дата состоит из даты будущего года, при создании заявки, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
     public void DescriptionFieldIsEmpty() {
         ClaimsSteps.clickButtonMainMenu();
-        AboutSteps.waitFor(3);
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(3);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickCheckBoxExecutorField();
         ClaimsSteps.clickDateFieldNextYear();
-        AboutSteps.waitFor(3);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickDescriptionField();
@@ -307,13 +279,11 @@ public class ClaimsTest {
     public void DateFieldNextYear() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddClaim();
         ClaimsSteps.clickTitleField();
         ClaimsSteps.clickCheckBoxExecutorField();
         ClaimsSteps.clickDateField();
         ClaimsSteps.clickButtonOkDate();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickTimeField();
         ClaimsSteps.clickButtonOkTime();
         ClaimsSteps.clickButtonSave();
@@ -329,14 +299,11 @@ public class ClaimsTest {
     public void EditClaimStatusOpen() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
         ClaimsSteps.clickButtonOk();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickOpenClaim();
         ClaimsSteps.clickEditClaim();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickEditClaimStatusOpen();
         ClaimsSteps.clickButtonSave();
     }
@@ -348,11 +315,8 @@ public class ClaimsTest {
     public void AddComment() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickOpenClaim();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonAddComment();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickCommentField();
         ClaimsSteps.clickButtonSave();
     }
@@ -364,9 +328,7 @@ public class ClaimsTest {
     public void EditComment() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickOpenClaim();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonEditComment();
         ClaimsSteps.clickCommentField();
         ClaimsScreen.clickButtonSave();
@@ -379,14 +341,11 @@ public class ClaimsTest {
     public void ChangeStatusOpenForInProgress() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
         ClaimsSteps.clickButtonOk();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickOpenClaim();
         ClaimsSteps.clickButtonSettings();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonTakeToWork();
     }
 
@@ -397,13 +356,11 @@ public class ClaimsTest {
     public void ChangeStatusOpenForCanceled() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
         ClaimsSteps.clickButtonOk();
         ClaimsSteps.clickOpenClaim();
         ClaimsSteps.clickButtonSettings();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonCancel();
     }
 
@@ -414,14 +371,11 @@ public class ClaimsTest {
     public void ChangeStatusOpenForInProgressExpired() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonFilter();
         ClaimsSteps.clickRemoveCheckBoxInProgress();
         ClaimsSteps.clickButtonOk();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickOpenClaim();
         ClaimsSteps.clickButtonSettings();
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonTakeToWork();
     }
 }

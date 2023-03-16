@@ -16,7 +16,6 @@ import io.qameta.allure.kotlin.Epic;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.netology.qa.elements.AuthorizationScreen;
-import ru.netology.qa.steps.AboutSteps;
 import ru.netology.qa.steps.AuthorizationSteps;
 import ru.netology.qa.steps.ClaimsSteps;
 import ru.netology.qa.steps.NewsSteps;
@@ -47,15 +46,12 @@ public class NewsTest {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordField();
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
     }
 
     @AfterClass
     public static void Exit() {
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
-        AboutSteps.waitFor(2);
         AuthorizationSteps.clickButtonLogOut();
     }
 
@@ -68,7 +64,6 @@ public class NewsTest {
     public void viewingNews() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsSteps.clickExpandNews();
     }
 
@@ -77,10 +72,8 @@ public class NewsTest {
     @Story("TC - 41")
     @Description("Сортировка новостей во вкладке Новости мобильного приложения Мобильный хоспис (Позитивный)")
     public void newsSorting() {
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonSorting();
     }
 
@@ -91,7 +84,6 @@ public class NewsTest {
     public void filteringNewsNoCategoryPositive() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonFilterNews();
         NewsSteps.clickButtonTitleFilterNews();
         NewsSteps.clickButtonCategoryFilter();
@@ -104,12 +96,10 @@ public class NewsTest {
     public void filteringNewsCertainPeriodTime() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonFilterNews();
         NewsSteps.clickButtonTitleFilterNews();
         NewsSteps.clickButtonDateStart();
         NewsSteps.clickButtonOkDateStart();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonDateEnd();
         NewsSteps.clickButtonCategoryFilter();
     }
@@ -121,14 +111,11 @@ public class NewsTest {
     public void filteringNewsCertainPeriodTimeNegative() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonFilterNews();
         NewsSteps.clickButtonTitleFilterNews();
         NewsSteps.clickButtonDateStart();
         NewsSteps.clickButtonOkDateStart();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonCategoryFilter();
-        AboutSteps.waitFor(2);
         NewsSteps.clickButtonOkWrongMessage();
         NewsSteps.clickButtonDateStart();
         NewsSteps.clickButtonOkDateStart();

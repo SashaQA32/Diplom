@@ -19,7 +19,6 @@ import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.netology.qa.elements.AuthorizationScreen;
 import ru.netology.qa.elements.NewsControlPanelScreen;
-import ru.netology.qa.steps.AboutSteps;
 import ru.netology.qa.steps.AuthorizationSteps;
 import ru.netology.qa.steps.ClaimsSteps;
 import ru.netology.qa.steps.NewsControlPanelSteps;
@@ -52,15 +51,12 @@ public class NewsControlPanelTest {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordField();
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
     }
 
     @AfterClass
     public static void Exit() {
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
-        AboutSteps.waitFor(2);
         AuthorizationSteps.clickButtonLogOut();
     }
 
@@ -73,7 +69,6 @@ public class NewsControlPanelTest {
     public void sortingNewsControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelScreen.clickButtonControlPanel();
         NewsControlPanelScreen.clickButtonSorting();
     }
@@ -85,7 +80,6 @@ public class NewsControlPanelTest {
     public void viewingNewsControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickClickNews();
     }
@@ -97,7 +91,6 @@ public class NewsControlPanelTest {
     public void deletingActiveNews() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickClickNews();
         NewsControlPanelSteps.clickButtonDeleteNews();
@@ -111,13 +104,10 @@ public class NewsControlPanelTest {
     public void editNewsControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickClickNews();
         NewsControlPanelSteps.clickButtonEditNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTitleNewsControlPanel();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonSaveEditingNews();
     }
 
@@ -128,7 +118,6 @@ public class NewsControlPanelTest {
     public void statusChangeNews() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickClickNews();
         NewsControlPanelSteps.clickButtonEditNews();
@@ -143,7 +132,6 @@ public class NewsControlPanelTest {
     public void filterNewsByCriterionActive() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickFilterNewsControlPanel();
         NewsControlPanelSteps.clickRemoveCheckBoxActive();
@@ -157,7 +145,6 @@ public class NewsControlPanelTest {
     public void filterNewsByCriterionNotActive() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickFilterNewsControlPanel();
         NewsControlPanelSteps.clickRemoveCheckBoxNotActive();
@@ -171,15 +158,12 @@ public class NewsControlPanelTest {
     public void creationNewsInControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
         NewsControlPanelSteps.clickButtonCategoryCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
@@ -193,15 +177,12 @@ public class NewsControlPanelTest {
     public void fieldCategoryEmptyCreationNewsInControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
         NewsControlPanelSteps.clickButtonSaveCreatingNews();
@@ -215,15 +196,12 @@ public class NewsControlPanelTest {
     public void fieldTitleEmptyCreationNewsInControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNew();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
         NewsControlPanelSteps.clickButtonSaveCreatingNews();
@@ -237,14 +215,11 @@ public class NewsControlPanelTest {
     public void fieldDateEmptyCreationNewsInControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNews();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
         NewsControlPanelSteps.clickButtonSaveCreatingNews();
@@ -259,14 +234,11 @@ public class NewsControlPanelTest {
     public void fieldTimeEmptyCreationNewsInControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNews();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
         NewsControlPanelSteps.clickButtonSaveCreatingNews();
@@ -280,15 +252,12 @@ public class NewsControlPanelTest {
     public void fieldDescriptionEmptyCreationNewsInControlPanel() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNews();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickButtonSaveCreatingNews();
@@ -302,15 +271,12 @@ public class NewsControlPanelTest {
     public void customCategoryName() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNewsEmpty();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
@@ -326,15 +292,12 @@ public class NewsControlPanelTest {
     public void fieldCategoryConsistsOfNumbers() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNewsNumbers();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
@@ -350,15 +313,12 @@ public class NewsControlPanelTest {
     public void fieldCategoryConsistsOfSpecialCharacters() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingCharacters();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNews();
         NewsControlPanelSteps.clickButtonOkDateCreatingNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();
@@ -373,14 +333,11 @@ public class NewsControlPanelTest {
     public void fieldDateConsistsOfNextYearCreatingNews() {
         ClaimsSteps.clickButtonMainMenu();
         NewsSteps.clickButtonNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonControlPanel();
         NewsControlPanelSteps.clickAddNews();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonCategoryCreatingNews();
         NewsControlPanelSteps.clickButtonTitleCreatingNews();
         NewsControlPanelSteps.clickButtonDateCreatingNextDate();
-        AboutSteps.waitFor(2);
         NewsControlPanelSteps.clickButtonTimeCreatingNews();
         NewsControlPanelSteps.clickButtonOkTimeCreatingNews();
         NewsControlPanelSteps.clickDescriptionCreatingNews();

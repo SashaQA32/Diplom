@@ -8,26 +8,29 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-
 import static org.hamcrest.Matchers.allOf;
 import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsButtonLogOut;
 import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsLoginField;
 import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsPasswordField;
 import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElementsTextAuthorization;
+import static ru.netology.qa.elements.WaitId.waitFor;
+import static ru.netology.qa.elements.WaitId.waitUntilElement;
 
 import io.qameta.allure.kotlin.Allure;
+import ru.iteco.fmhandroid.R;
 
 public class AuthorizationSteps {
 
     public static void clickButton(Integer resourceId){
         Allure.step("Нажать на кнопку Войти");
+        waitUntilElement(R.id.enter_button);
         onView(withId(resourceId))
-                .perform(click())
-                .check(matches(isDisplayed()));
+                .perform(click());
     }
 
     public static void clickLoginField(){
         Allure.step("В поле Логин ввести: login2");
+        waitUntilElement(R.id.login_text_input_layout);
         onView(getAuthorizationElementsLoginField())
                 .perform(replaceText("login2"), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
@@ -35,6 +38,7 @@ public class AuthorizationSteps {
 
     public static void clickPasswordField(){
         Allure.step("В поле Пароль ввести: password2");
+        waitUntilElement(R.id.password_text_input_layout);
         onView(getAuthorizationElementsPasswordField())
                 .perform(replaceText("password2"), closeSoftKeyboard())
                 .check(matches(isDisplayed()));
@@ -42,18 +46,22 @@ public class AuthorizationSteps {
 
     public static void clickButtonExit(Integer resourceId) {
         Allure.step("Нажать на кнопку Выход");
+        waitUntilElement(R.id.authorization_image_button);
+        waitFor(2);
         onView(withId(resourceId))
                 .perform(click());
     }
 
     public static void clickButtonLogOut(){
         Allure.step("Нажать на кнопку для выхода из приложения");
+        waitUntilElement(android.R.id.title);
         onView(getAuthorizationElementsButtonLogOut())
                 .perform(click());
     }
 
     public static void textAuthorization(){
         Allure.step("Отобразилаcь страница Авторизации");
+        waitUntilElement(R.id.nav_host_fragment);
         onView(getAuthorizationElementsTextAuthorization())
                 .check(matches(isDisplayed()));
     }

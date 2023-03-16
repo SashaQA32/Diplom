@@ -18,6 +18,7 @@ import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonOkDateStar
 import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonOkWrongMessage;
 import static ru.netology.qa.elements.NewsScreen.getNewsElementsButtonSorting;
 import static ru.netology.qa.elements.NewsScreen.getNewsElementsTitleFilterNews;
+import static ru.netology.qa.elements.WaitId.waitUntilElement;
 
 import android.view.View;
 
@@ -26,68 +27,79 @@ import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
 import io.qameta.allure.kotlin.Allure;
+import ru.iteco.fmhandroid.R;
 
 public class NewsSteps {
 
 
     public static void clickButtonNews() {
         Allure.step("Нажать на кнопку Новости на главной странице мобильного приложения");
+        waitUntilElement(android.R.id.title);
         onView(getNewsElementsButtonNews())
                 .perform(click());
     }
 
     public static void clickExpandNews() {
         Allure.step("Нажать на кнопку развернуть новость");
+        waitUntilElement(R.id.view_news_item_image_view);
         onView(getNewsElementsButtonExpandNews())
                 .perform(doubleClick());
     }
 
     public static void clickButtonSorting() {
         Allure.step("Нажать на кнопку сортировки новостей");
+        waitUntilElement(R.id.sort_news_material_button);
         onView(getNewsElementsButtonSorting())
                 .perform(click());
     }
 
     public static void clickButtonFilterNews() {
         Allure.step("Нажать на кнопку Фильтровать Новости");
+        waitUntilElement(R.id.filter_news_material_button);
         onView(getNewsElementsButtonFilterNews())
                 .perform(click());
     }
 
     public static void clickButtonCategoryFilter() {
         Allure.step("Выбрать категорию для фильтрации новостей");
+        waitUntilElement(R.id.filter_button);
         onView(getNewsElementsButtonCategoryFilter())
                 .perform(click());
     }
 
     public static void clickButtonDateStart() {
         Allure.step("Указать диапазон дат - начальная дата");
+        waitUntilElement(R.id.news_item_publish_date_start_text_input_edit_text);
         onView(getNewsElementsButtonDateStart())
                 .perform(click());
     }
 
     public static void clickButtonOkDateStart() {
         Allure.step("Нажать на кнопку ОК");
+        waitUntilElement(android.R.id.button1);
         onView(getNewsElementsButtonOkDateStart())
                 .perform(click());
     }
 
-    static String date = "15.02.2023";
+    static String date = "16.03.2023";
 
     public static void clickButtonDateEnd() {
         Allure.step("Указать диапазон дат - конечная дата");
+        waitUntilElement(R.id.news_item_publish_date_end_text_input_edit_text);
         onView(getNewsElementsButtonDateEnd())
                 .perform(replaceText(date));
     }
 
     public static void clickButtonOkWrongMessage() {
         Allure.step("Нажать на кнопку ОК в Уведомлении");
+        waitUntilElement(android.R.id.button1);
         onView(getNewsElementsButtonOkWrongMessage())
                 .perform(click());
     }
 
     public static void clickButtonTitleFilterNews() {
         Allure.step("Нажать на кнопку Фильтровать Новости");
+        waitUntilElement(R.id.filter_news_title_text_view);
         onView(getNewsElementsTitleFilterNews())
                 .check(matches(allOf(withText("Filter news"), isDisplayed())))
                 .perform(click());

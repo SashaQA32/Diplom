@@ -16,7 +16,6 @@ import io.qameta.allure.kotlin.Epic;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.netology.qa.elements.AuthorizationScreen;
-import ru.netology.qa.steps.AboutSteps;
 import ru.netology.qa.steps.AuthorizationSteps;
 import ru.netology.qa.steps.QuotesSteps;
 
@@ -46,15 +45,12 @@ public class QuotesTest {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordField();
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
     }
 
     @AfterClass
     public static void Exit() {
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
-        AboutSteps.waitFor(2);
         AuthorizationSteps.clickButtonLogOut();
     }
 
@@ -65,7 +61,6 @@ public class QuotesTest {
     @Story("TC - 73")
     @Description("Развернуть/свернуть тематическую цитату (Позитивный)")
     public void expandThematicQuote() {
-        AboutSteps.waitFor(3);
         QuotesSteps.clickButtonThematicQuote();
         QuotesSteps.clickTitleThematicQuote();
         QuotesSteps.clickButtonExpandThematicQuote();

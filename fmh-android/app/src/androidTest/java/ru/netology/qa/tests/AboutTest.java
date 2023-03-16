@@ -48,15 +48,12 @@ public class AboutTest {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordField();
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
     }
 
     @AfterClass
     public static void Exit() {
-        AboutSteps.waitFor(2);
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
-        AboutSteps.waitFor(2);
         AuthorizationSteps.clickButtonLogOut();
     }
 
@@ -69,9 +66,7 @@ public class AboutTest {
     public void transitionPrivacyPolicy() {
         ClaimsSteps.clickButtonMainMenu();
         AboutSteps.clickButtonAbout();
-        AboutSteps.waitFor(2);
         AboutSteps.clickButtonPrivacyPolicy();
-        AboutSteps.waitFor(3);
         //Выход
         pressBack();
     }
@@ -81,12 +76,9 @@ public class AboutTest {
     @Story("TC - 75")
     @Description("Просмотр ссылки Пользовательское соглашение во вкладке О приложении (Позитивный)")
     public void transitionTermsOfUse() {
-        AboutSteps.waitFor(2);
         ClaimsSteps.clickButtonMainMenu();
         AboutSteps.clickButtonAbout();
-        AboutSteps.waitFor(2);
         AboutSteps.clickButtonTermsOfUse();
-        AboutSteps.waitFor(3);
         //Выход
         pressBack();
     }

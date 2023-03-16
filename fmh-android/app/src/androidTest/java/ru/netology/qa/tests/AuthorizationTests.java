@@ -15,7 +15,6 @@ import io.qameta.allure.kotlin.Epic;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.netology.qa.elements.AuthorizationScreen;
-import ru.netology.qa.steps.AboutSteps;
 import ru.netology.qa.steps.AuthorizationSteps;
 
 @LargeTest
@@ -55,7 +54,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordField();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
         AuthorizationSteps.clickButtonLogOut();
     }
@@ -69,7 +67,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginEmpty();
         AuthorizationSteps.clickPasswordField();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 3 - Поле "Логин" заполнено данными незарегистрированного пользователя, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -81,7 +78,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginFieldUnregisteredUser();
         AuthorizationSteps.clickPasswordField();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 4 - Поле "Логин" состоит из спецсимволов, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -93,7 +89,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginFieldWithSpecialCharacters();
         AuthorizationSteps.clickPasswordField();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 5 - Поле "Логин" состоит из одного символа, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -105,7 +100,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginFieldOneLetter();
         AuthorizationSteps.clickPasswordField();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 6 - Поле "Логин" состоит из букв разного регистра, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -117,7 +111,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginFieldLettersOfDifferentCase();
         AuthorizationSteps.clickPasswordField();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 7 - Поле "Пароль" пустое, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -129,7 +122,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldIsEmpty();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 8 - Поле "Пароль" заполнено данными незарегистрированного пользователя, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -141,7 +133,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldUnregisteredUser();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 9 - Поле "Пароль" состоит из спецсимволов, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -153,7 +144,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldWithSpecialCharacters();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 10 - Поле "Пароль" состоит из одного символа, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -165,7 +155,6 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldOneLetter();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 
     //  TC - 11 - Поле "Пароль" состоит из букв разного регистра, при авторизации, в мобильном приложении "Мобильный хоспис"(Негативный).
@@ -177,6 +166,5 @@ public class AuthorizationTests {
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldLettersOfDifferentCase();
         AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
-        AboutSteps.waitFor(3);
     }
 }

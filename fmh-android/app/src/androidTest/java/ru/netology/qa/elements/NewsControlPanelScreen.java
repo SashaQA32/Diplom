@@ -74,9 +74,8 @@ public class NewsControlPanelScreen extends NewsControlPanelSteps {
     }
 
     public static Matcher<View> getNewsControlPanelElementsButtonCategoryCreatingNews() {
-        return   allOf(withId(R.id.news_item_category_text_auto_complete_text_view));
+        return allOf(withId(R.id.news_item_category_text_auto_complete_text_view));
     }
-
 
     public static Matcher<View> getNewsControlPanelElementsButtonTitleCreatingNews() {
         return allOf(withId(R.id.news_item_title_text_input_edit_text));
