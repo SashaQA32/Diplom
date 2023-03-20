@@ -29,12 +29,7 @@ public class AuthorizationTests {
             new ActivityTestRule<>(AppActivity.class);
 
     @Before
-    public void Authorization() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void authorizationVerification() {
         try {
             AuthorizationScreen.textAuthorization();
         } catch (NoMatchingViewException e) {
@@ -84,7 +79,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 4")
     @Description("Поле Логин состоит из спецсимволов, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void LoginFieldWithSpecialCharacters() {
+    public void loginFieldWithSpecialCharacters() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginFieldWithSpecialCharacters();
         AuthorizationSteps.clickPasswordField();
@@ -95,7 +90,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 5")
     @Description("Поле Логин состоит из одного символа, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void LoginFieldOneLetter() {
+    public void loginFieldOneLetter() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginFieldOneLetter();
         AuthorizationSteps.clickPasswordField();
@@ -106,7 +101,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 6")
     @Description("Поле Логин состоит из букв разного регистра, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void LoginFieldLettersOfDifferentCase() {
+    public void loginFieldLettersOfDifferentCase() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginFieldLettersOfDifferentCase();
         AuthorizationSteps.clickPasswordField();
@@ -117,7 +112,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 7")
     @Description("Поле Пароль пустое, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void PasswordFieldIsEmpty() {
+    public void passwordFieldIsEmpty() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldIsEmpty();
@@ -128,7 +123,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 8")
     @Description("Поле Пароль заполнено данными незарегистрированного пользователя, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void PasswordFieldUnregisteredUser() {
+    public void passwordFieldUnregisteredUser() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldUnregisteredUser();
@@ -139,7 +134,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 9")
     @Description("Поле Пароль состоит из спецсимволов, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void PasswordFieldWithSpecialCharacters() {
+    public void passwordFieldWithSpecialCharacters() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldWithSpecialCharacters();
@@ -150,7 +145,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 10")
     @Description("Поле Пароль состоит из одного символа, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void PasswordFieldOneLetter() {
+    public void passwordFieldOneLetter() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldOneLetter();
@@ -161,7 +156,7 @@ public class AuthorizationTests {
     @Test
     @Story("TC - 11")
     @Description("Поле Пароль состоит из букв разного регистра, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
-    public void PasswordFieldLettersOfDifferentCase() {
+    public void passwordFieldLettersOfDifferentCase() {
         AuthorizationSteps.textAuthorization();
         AuthorizationSteps.clickLoginField();
         AuthorizationSteps.clickPasswordFieldLettersOfDifferentCase();

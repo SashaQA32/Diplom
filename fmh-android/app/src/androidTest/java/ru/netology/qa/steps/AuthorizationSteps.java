@@ -16,10 +16,24 @@ import static ru.netology.qa.elements.AuthorizationScreen.getAuthorizationElemen
 import static ru.netology.qa.elements.WaitId.waitFor;
 import static ru.netology.qa.elements.WaitId.waitUntilElement;
 
+import androidx.test.espresso.NoMatchingViewException;
+
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
+import ru.netology.qa.elements.AuthorizationScreen;
 
 public class AuthorizationSteps {
+
+    public static void authorization() {
+        try {
+            AuthorizationScreen.textAuthorization();
+        } catch (NoMatchingViewException e) {
+            return;
+        }
+        AuthorizationSteps.clickLoginField();
+        AuthorizationSteps.clickPasswordField();
+        AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
+    }
 
     public static void clickButton(Integer resourceId){
         Allure.step("Нажать на кнопку Войти");
@@ -62,6 +76,7 @@ public class AuthorizationSteps {
     public static void textAuthorization(){
         Allure.step("Отобразилаcь страница Авторизации");
         waitUntilElement(R.id.nav_host_fragment);
+        waitFor(3);
         onView(getAuthorizationElementsTextAuthorization())
                 .check(matches(isDisplayed()));
     }

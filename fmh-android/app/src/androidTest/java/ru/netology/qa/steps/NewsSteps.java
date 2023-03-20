@@ -81,7 +81,7 @@ public class NewsSteps {
                 .perform(click());
     }
 
-    static String date = "16.03.2023";
+    static String date = "20.03.2023";
 
     public static void clickButtonDateEnd() {
         Allure.step("Указать диапазон дат - конечная дата");

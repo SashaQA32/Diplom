@@ -1,6 +1,5 @@
 package ru.netology.qa.tests;
 
-import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 
@@ -20,8 +19,8 @@ import ru.netology.qa.steps.AuthorizationSteps;
 import ru.netology.qa.steps.QuotesSteps;
 
 @LargeTest
-@RunWith(AllureAndroidJUnit4.class)
 //@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 
 @Epic("Тест-кейсы для проведения функционального тестирования вкладки Тематические цитаты")
 public class QuotesTest {
@@ -31,25 +30,12 @@ public class QuotesTest {
             new ActivityTestRule<>(AppActivity.class);
 
     @Before
-    public void Authorization() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        try {
-            AuthorizationScreen.textAuthorization();
-        } catch (NoMatchingViewException e) {
-            return;
-        }
-        AuthorizationSteps.textAuthorization();
-        AuthorizationSteps.clickLoginField();
-        AuthorizationSteps.clickPasswordField();
-        AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
+    public void authorizationCheck() {
+        AuthorizationSteps.authorization();
     }
 
     @AfterClass
-    public static void Exit() {
+    public static void exit() {
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
         AuthorizationSteps.clickButtonLogOut();
     }

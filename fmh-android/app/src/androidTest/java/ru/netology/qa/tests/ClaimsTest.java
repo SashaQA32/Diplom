@@ -1,7 +1,5 @@
 package ru.netology.qa.tests;
 
-import androidx.test.espresso.NoMatchingViewException;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 
@@ -11,6 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.Epic;
 import io.qameta.allure.kotlin.Story;
@@ -21,8 +20,8 @@ import ru.netology.qa.steps.AuthorizationSteps;
 import ru.netology.qa.steps.ClaimsSteps;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
-//@RunWith(AllureAndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 
 @Epic("Тест-кейсы для проведения функционального тестирования вкладки Заявки мобильного приложения Мобильный хоспис")
 public class ClaimsTest {
@@ -32,25 +31,12 @@ public class ClaimsTest {
             new ActivityTestRule<>(AppActivity.class);
 
     @Before
-    public void Authorization() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        try {
-            AuthorizationScreen.textAuthorization();
-        } catch (NoMatchingViewException e) {
-            return;
-        }
-        AuthorizationSteps.textAuthorization();
-        AuthorizationSteps.clickLoginField();
-        AuthorizationSteps.clickPasswordField();
-        AuthorizationScreen.clickButton(AuthorizationScreen.getAuthorizationElementsButton());
+    public void authorizationCheck() {
+        AuthorizationSteps.authorization();
     }
 
     @AfterClass
-    public static void Exit() {
+    public static void exit() {
         AuthorizationScreen.clickButtonExit(AuthorizationScreen.getAuthorizationElementsButtonExit());
         AuthorizationSteps.clickButtonLogOut();
     }
@@ -223,7 +209,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 24")
     @Description("Поле Исполнитель состоит из букв и цифр, при создании заявки, во вкладке Заявки мобильного приложения Мобильный хоспис (Негативный)")
-    public void ExecutorFieldConsistsLettersAndNumbers() {
+    public void executorFieldConsistsLettersAndNumbers() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonAddClaim();
@@ -241,7 +227,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 25")
     @Description("Поле Исполнитель состоит из спецсимволов, при создании заявки, во вкладке Заявки мобильного приложения Мобильный хоспис (Негативный)")
-    public void ExecutorFieldSpecialCharacters() {
+    public void executorFieldSpecialCharacters() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonAddClaim();
@@ -259,7 +245,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 26")
     @Description("Поле Дата состоит из даты будущего года, при создании заявки, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void DescriptionFieldIsEmpty() {
+    public void descriptionFieldIsEmpty() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonAddClaim();
@@ -276,7 +262,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 29")
     @Description(" Поле Описание пустое, при создании заявки, во вкладке Заявки мобильного приложения Мобильный хоспис (Негативный)")
-    public void DateFieldNextYear() {
+    public void dateFieldNextYear() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonAddClaim();
@@ -296,7 +282,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 30")
     @Description("Редактирование заявки, находящаяся в статусе Открыта, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void EditClaimStatusOpen() {
+    public void editClaimStatusOpen() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonFilter();
@@ -312,7 +298,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 31")
     @Description("Добавление комментария к заявке, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void AddComment() {
+    public void addComment() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickOpenClaim();
@@ -325,7 +311,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 32")
     @Description("Редактирование комментария к заявке, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void EditComment() {
+    public void editComment() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickOpenClaim();
@@ -338,7 +324,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 33")
     @Description("Смена статуса заявки, находящаяся в статусе Открыта на статус В работе, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void ChangeStatusOpenForInProgress() {
+    public void changeStatusOpenForInProgress() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonFilter();
@@ -353,7 +339,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 34")
     @Description("Смена статуса заявки, находящаяся в статусе Открыта на статус В работе, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void ChangeStatusOpenForCanceled() {
+    public void changeStatusOpenForCanceled() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonFilter();
@@ -368,7 +354,7 @@ public class ClaimsTest {
     @Test
     @Story("TC - 35")
     @Description("Смена статуса заявки, с истекшим сроком  исполнения, находящаяся в статусе Открыта на статус В работу, во вкладке Заявки мобильного приложения Мобильный хоспис (Позитивный)")
-    public void ChangeStatusOpenForInProgressExpired() {
+    public void changeStatusOpenForInProgressExpired() {
         ClaimsSteps.clickButtonMainMenu();
         ClaimsSteps.clickButtonClaims();
         ClaimsSteps.clickButtonFilter();
